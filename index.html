@@ -2,27 +2,90 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shankar Raman | CV</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shankar Raman | TA Pro</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <div class="profile-spotlight">Tap here to begin</div>
-  <div class="card">Experience: OpenText</div>
-  <div class="company-box" data-target="target">Target</div>
-  <div class="expertise-box" data-target="genai">GenAI Hiring</div>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="ShankarCV.pdf" download>📥 Download CV</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <!-- Mini icon and progress bar -->
+  <main>
+    <section class="intro">
+      <img src="toy-avatar.png" alt="Shankar Toy" class="toy-bg" />
+      <h1>Shankar Raman</h1>
+      <p>15+ years in Talent Acquisition | Leadership Hiring | GenAI Recruiting | Team Builder</p>
+    </section>
+
+    <section id="experience" class="content-section">
+      <h2>Experience</h2>
+      <div class="card active">OpenText (2023–Present): Led 1000+ hires, GenAI sourcing, 30% referrals</div>
+      <div class="card">Out of the Blue (2022–2023): Head HR | Remote</div>
+      <div class="card">BrowserStack (2022–2022): Recruiting Lead | Remote</div>
+      <div class="card">Target (2018–2022): Lead Executive Recruiter</div>
+      <div class="card">WNS (2014–2018): Group Manager – Talent Acquisition</div>
+      <div class="card">Recruise (2010–2014): Sr. Lead Consultant</div>
+    </section>
+
+    <section id="expertise" class="content-section">
+      <h2>Expertise</h2>
+      <div class="ribbon-button" data-target="genai">GenAI Hiring</div>
+      <div class="ribbon-button" data-target="leadership">Leadership Hiring</div>
+      <div class="ribbon-button" data-target="mentoring">Mentoring & Team Management</div>
+      <div class="expertise-detail" data-id="genai">Implemented GenAI tools at OpenText, reducing TAT by 20%</div>
+      <div class="expertise-detail" data-id="leadership">Hired leaders across engineering, GTM, and data science</div>
+      <div class="expertise-detail" data-id="mentoring">Managed TA teams, built 9-box grid development plans</div>
+    </section>
+
+    <section id="projects" class="content-section">
+      <h2>Projects</h2>
+      <ul>
+        <li>BounceBack Returnee Program (Target)</li>
+        <li>Diversity Principal Scientist Hire (Target)</li>
+        <li>30% Diversity Hiring at WNS</li>
+        <li>Buddy Program at BrowserStack</li>
+        <li>Rehire + IJP Policy Revamp</li>
+      </ul>
+    </section>
+
+    <section id="testimonials" class="content-section">
+      <h2>Testimonials</h2>
+      <div class="testimonial-carousel">
+        <div class="testimonial">“Shankar takes a data-driven approach to hiring – Abhishek De, CHRO”</div>
+        <div class="testimonial">“One of the best recruiting partners I’ve had – Taraprasad Battha”</div>
+        <div class="testimonial">“Problem solver with grit – Hari C P, Target”</div>
+        <div class="testimonial">“Helped build rare data science teams – Arindam Datta”</div>
+        <div class="testimonial">“Hard-working, quick learner – Kabita Paul”</div>
+        <div class="testimonial">“Built bridges with talent and guided careers – Sharmad Khare”</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Chatbot Toggle -->
+  <img src="chat-avatar.png" alt="Chatbot" class="chatbot-toggle"/>
+
+  <!-- Chatbot Interface -->
+  <div class="chatbot">
+    <div class="chatbot-header">Ask Me Anything</div>
+    <div class="chatbot-messages"></div>
+    <div class="chatbot-footer">
+      <input type="text" class="chatbot-input" placeholder="Ask something..." />
+      <button class="send-button">Send</button>
+    </div>
+  </div>
+
+  <div class="cursor"></div>
   <div class="mini-man">🧍‍♂️</div>
   <div class="progress-container"><div class="progress"></div></div>
-
-  <!-- Chatbot -->
-  <div class="chatbot-toggle">💬</div>
-  <div class="chatbot" style="display:none;">
-    <div class="chatbot-messages"></div>
-    <div class="typing-indicator" style="display:none;">Typing...</div>
-    <input type="text" class="chatbot-input" placeholder="Ask something..." />
-  </div>
 
   <script src="script.js"></script>
 </body>
