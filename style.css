@@ -1,70 +1,255 @@
+/* General Styles */
 body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  background: #f5f5f5;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fdfdfd;
+  color: #333;
 }
 
-.card, .company-box, .expertise-box {
-  padding: 15px;
-  margin: 10px 0;
-  background: white;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  cursor: pointer;
+header {
+  background: #1a1a1a;
+  color: white;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
-.active {
-  background: #d1ffd6;
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
 }
 
-.profile-spotlight {
-  background: #ffd700;
-  padding: 20px;
-  font-weight: bold;
-  cursor: pointer;
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-.mini-man {
-  position: absolute;
-  transition: 0.3s ease;
+nav ul li a:hover {
+  color: #ffd369;
 }
 
-.progress-container {
+main {
+  padding: 2rem;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.intro .toy-bg {
   width: 100%;
-  height: 10px;
-  background: #eee;
-  margin-top: 20px;
-  border-radius: 5px;
+  max-width: 500px;
+  display: block;
+  margin: 0 auto 1rem;
+  border-radius: 12px;
 }
 
-.progress {
-  height: 10px;
-  background: #4caf50;
-  width: 0%;
-  border-radius: 5px;
+.card {
+  background: #e7f2ff;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 700px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  background: #cce5ff;
+}
+
+.ribbon-button {
+  background-color: #ff914d;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 20px;
+  display: inline-block;
+  margin: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.ribbon-button:hover {
+  background-color: #ff7300;
+}
+
+.expertise-detail {
+  display: none;
+  margin: 1rem auto;
+  max-width: 700px;
+  background-color: #f4f4f4;
+  padding: 1rem;
+  border-left: 5px solid #ff7300;
+  border-radius: 4px;
+}
+
+.expertise-detail.active {
+  display: block;
+}
+
+/* Testimonials */
+.testimonial-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 1rem;
+  scroll-behavior: smooth;
+}
+
+.testimonial {
+  min-width: 300px;
+  background: #ffe0b3;
+  padding: 1rem;
+  border-radius: 10px;
+  font-style: italic;
+  flex-shrink: 0;
+  animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Chatbot */
+.chatbot-toggle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  border: 4px solid #00c6ff;
+  box-shadow: 0 0 10px #00c6ff;
+  z-index: 999;
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 5px #00c6ff;
+  }
+  50% {
+    box-shadow: 0 0 20px #00c6ff;
+  }
+  100% {
+    box-shadow: 0 0 5px #00c6ff;
+  }
 }
 
 .chatbot {
   position: fixed;
-  bottom: 10px;
-  right: 10px;
+  bottom: 90px;
+  right: 20px;
   width: 300px;
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  background: #222;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #00c6ff;
+  display: none;
   flex-direction: column;
-  padding: 10px;
+  z-index: 999;
+}
+
+.chatbot-header {
+  background: #00c6ff;
+  padding: 0.5rem;
+  text-align: center;
+  font-weight: bold;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .chatbot-messages {
+  padding: 0.75rem;
   height: 200px;
   overflow-y: auto;
-  margin-bottom: 10px;
+  background: #333;
+}
+
+.chatbot-footer {
+  display: flex;
+  border-top: 1px solid #444;
 }
 
 .chatbot-input {
+  flex: 1;
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+  background: #222;
+  color: #fff;
+}
+
+.send-button {
+  background: #00c6ff;
+  border: none;
+  padding: 0 1rem;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Progress and mini-man */
+.progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 8px;
-  border: 1px solid #aaa;
-  border-radius: 4px;
+  height: 6px;
+  background: #eee;
+  z-index: 10;
+}
+
+.progress {
+  height: 6px;
+  background: #00c6ff;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+.mini-man {
+  position: fixed;
+  top: 100px;
+  left: 20px;
+  font-size: 24px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .card, .expertise-detail {
+    width: 95%;
+  }
+
+  .chatbot {
+    width: 90%;
+    right: 5%;
+  }
 }
